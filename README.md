@@ -104,13 +104,15 @@ Relacionado à manipulação e limpeza de dados, as bibliotecas mais conhecidas 
 
 Podemos importar a biblioteca Pandas por meio do comando “pip install pandas” dentro da IDE utilizada pelo usuário (seja o Visual Studio Code, Jupyter Notebook, PyCharm etc.) e atribuindo, ao final, seu apelido “pd”, ficando então da seguinte forma:
 
-- Código 1
+- Código 1:
+
         # Importando o Pandas
         import pandas as pd
 
 Com o Pandas importado podemos carregar um dataframe e atribuí-lo à variável “df” (abreviação de dataframe). É possível ler diversos formatos de dataframes, dentre alguns podemos exemplificar:
 
-- Código 2
+- Código 2:
+
         # Exemplo 1
         df = pd.read_excel,(“Caminho do dataframe + nome + o formato do arquivo”)
         
@@ -131,19 +133,22 @@ Com o Pandas importado podemos carregar um dataframe e atribuí-lo à variável 
 
 Utilizando um dicionário, por exemplo, podemos criar um dataframe com o seguinte comando:
 
-- Código 3
+- Código 3:
+
         # Transformando um dicionário em um dataframe
         df = pd. DataFrame(‘Caminho do dataframe + o formato do arquivo’)
 
 Para exibir seu dataframe na tela podemos utilizar o comando a seguir:
 
-- Código 4
+- Código 4:
+
         # Exibindo o dataframe
         print(df)
 
 Podemos ainda, importar a biblioteca NumPy por meio do comando “pip install numpy” dentro da IDE utilizada pelo usuário e adicionar, ao final, o seu apelido “np”, ficando então da seguinte forma:
 
-- Código 5
+- Código 5:
+
         # Importando a biblioteca NumPy
         pip install numpy as np
 
@@ -159,7 +164,8 @@ Com base no que já foi explicitado e considerando que o Pandas e o NumPy já te
 
 Para a aquisição de um dataframe foi importado a biblioteca Pandas. Em seguida criamos um dicionario para ser chamado pela função pd.DataFrame() do Pandas (além de chamar o dicionário, o converte de "chave" : "valor" para um dataframe de linhas e colunas, atribui "dados" a variável df e exibe o dataframe ao final com a função print():
 
-- Código 6
+- Código 6:
+
         # Importando o Pandas
         import pandas as pd
 
@@ -227,7 +233,8 @@ Este é um pequeno exemplo de manipulação de dados com a biblioteca Pandas do 
 
 Vamos verificar as colunas que esse dataset possui e o tipo de dado que cada uma possui por meio da função info():
 
-- Código 7
+- Código 7:
+
         # Exibindo informações do dataframe
         df.info()
 
@@ -242,7 +249,8 @@ Essa função apresenta o seguinte retorno:
 
 Para verificar se há dados ausentes podemos usar também o seguinte comando:
 
-- Código 8
+- Código 8:
+
         # Atribuindo os valores ausentes à variável valores_ausentes
         valores_ausentes = df.isnull()
         
@@ -257,7 +265,8 @@ A primeira linha de código atribui os valores ausentes à variavel "valores_aus
 Perceba que há um valor ausente na coluna "Sexo", o que só confirma a conclusão que tiramos da imagem 3. Para tratar esse erro podemos remover a linha que possui o erro, aplicar métodos estatísticos ou consultar o setor da empresa que nos forneceu os dados para que possamos alterá-lo de forma correta.
 Pudemos verifica na imagem 2 que se trata de um valor ausente da informação sobre o sexo de José. Para alterá-la para "Masc" (masculino) podemos acessar a linha e a coluna do valor ausente e modificá-lo individualmente da seguinte forma:
 
-- Código 9
+- Código 9:
+
         # Localizando o valor nulo na linha 2 e coluna 2 e atribuindo o valor
         df.iloc[2, 2] = "Masc"
         
@@ -273,7 +282,8 @@ O retorno no dataset seria o seguinte:
 
 Na imagem 5 vemos claramente que “Maria” é um valo duplicado. Para realizar a remoção de duplicatas no Python, podemos utilizar o comando:
 
-- Código 10
+- Código 10:
+
         # Remove duplicatas e, um dataframe
         df = df.drop_duplicates()
         
@@ -293,7 +303,8 @@ Na imagem 3, percebe-se que a coluna de idade, que é de valores inteiros, está
 
 Para transformarmos o tipo de objeto para inteiro, codamos o seguinte: 
 
-- Código 11
+- Código 11:
+
         # Transformando string em inteiro
         df["Idade"] = df["Idade"].astype(int)
         
@@ -321,7 +332,8 @@ Para tratar esse outlier, iremos considerá-lo como um erro de digitação, pode
 
 Para tal solução, codamos o seguinte:
 
-- Código 12
+- Código 12:
+
         # Tratando outliers da linha 3 e coluna 3, de 16.0m para 1.60m
         df.iloc[3, 3] = 1.60
 
