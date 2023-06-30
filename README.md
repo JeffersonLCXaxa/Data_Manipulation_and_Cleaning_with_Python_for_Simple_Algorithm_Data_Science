@@ -2,11 +2,13 @@
 
 ## Turning Data to Gold: The Art of Manipulating and Cleaning Data with Python in Data Science
 
+## License
 
+https://github.com/JeffersonLCXaxa/Data_Manipulation_and_Cleaning_with_Python_for_Simple_Algorithm_Data_Science/blob/main/LICENSE
 
-## License and author
+## Author
 
-
+Jefferson Luiz da Costa Xaxá
 
 ## Message to the reader
 
