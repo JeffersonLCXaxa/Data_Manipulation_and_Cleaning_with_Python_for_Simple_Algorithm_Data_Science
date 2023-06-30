@@ -104,13 +104,13 @@ Relacionado à manipulação e limpeza de dados, as bibliotecas mais conhecidas 
 
 Podemos importar a biblioteca Pandas por meio do comando “pip install pandas” dentro da IDE utilizada pelo usuário (seja o Visual Studio Code, Jupyter Notebook, PyCharm etc.) e atribuindo, ao final, seu apelido “pd”, ficando então da seguinte forma:
 
+- Código 1
         # Importando o Pandas
         import pandas as pd
 
-        # Código 1
-
 Com o Pandas importado podemos carregar um dataframe e atribuí-lo à variável “df” (abreviação de dataframe). É possível ler diversos formatos de dataframes, dentre alguns podemos exemplificar:
 
+- Código 2
         # Exemplo 1
         df = pd.read_excel,(“Caminho do dataframe + nome + o formato do arquivo”)
         
@@ -129,28 +129,24 @@ Com o Pandas importado podemos carregar um dataframe e atribuí-lo à variável 
         # Exemplo 6
         df = pd.read_sql,(“Caminho do dataframe + nome + o formato do arquivo”)
 
-        # Código 2
-
 Utilizando um dicionário, por exemplo, podemos criar um dataframe com o seguinte comando:
 
+- Código 3
         # Transformando um dicionário em um dataframe
         df = pd. DataFrame(‘Caminho do dataframe + o formato do arquivo’)
 
-        # Código 3
-
 Para exibir seu dataframe na tela podemos utilizar o comando a seguir:
 
+- Código 4
         # Exibindo o dataframe
         print(df)
 
-        # Código 4
-
 Podemos ainda, importar a biblioteca NumPy por meio do comando “pip install numpy” dentro da IDE utilizada pelo usuário e adicionar, ao final, o seu apelido “np”, ficando então da seguinte forma:
 
+- Código 5
         # Importando a biblioteca NumPy
         pip install numpy as np
 
-        # Código 5
 
 Com o NumPy podemos trabalhar com arrays e datatypes, entre outros, por exemplo, dentro de um dataframe. Contudo, neste artigo, daremos foco à biblioteca Pandas.
 Passado por esta etapa, seria realizado uma exploração dos dados para conhecer o dataframe que seria manipulados os dados.
@@ -163,6 +159,7 @@ Com base no que já foi explicitado e considerando que o Pandas e o NumPy já te
 
 Para a aquisição de um dataframe foi importado a biblioteca Pandas. Em seguida criamos um dicionario para ser chamado pela função pd.DataFrame() do Pandas (além de chamar o dicionário, o converte de "chave" : "valor" para um dataframe de linhas e colunas, atribui "dados" a variável df e exibe o dataframe ao final com a função print():
 
+- Código 6
         # Importando o Pandas
         import pandas as pd
 
@@ -214,17 +211,15 @@ Para a aquisição de um dataframe foi importado a biblioteca Pandas. Em seguida
         
         print(df)
 
-        # Código 6
-
 O dicionário seria exibido da seguinte forma:
-
 
 - Imagem 1
 
+
 Contudo, transformamos o dicionário em um dataframe, e o resultado do código é o seguinte:
 
-
 - Imagem 2
+
 
 Este é um pequeno exemplo de manipulação de dados com a biblioteca Pandas do Python.
 
@@ -232,15 +227,14 @@ Este é um pequeno exemplo de manipulação de dados com a biblioteca Pandas do 
 
 Vamos verificar as colunas que esse dataset possui e o tipo de dado que cada uma possui por meio da função info():
 
+- Código 7
         # Exibindo informações do dataframe
         df.info()
 
-        # Código 7
-
 Essa função apresenta o seguinte retorno:
 
-
 - Imagem 3
+
 
 É possível verificar que o dataframe possui 5 colunas (Nome, Idade, Sexo, Altura e Peso), e que respectivamente os tipos de dados são object, object, object, float64 e Int64 (onde object são dados de string, float64 são dados com números decimais e int64 são número inteiros). Ainda, podemos verificar que cada uma das colunas possui 5 valores, exceto a de “Sexo”, o que quer dizer que há valores ausentes nessa coluna, pois possui apenas 4 valores não nulos.
 
@@ -248,51 +242,48 @@ Essa função apresenta o seguinte retorno:
 
 Para verificar se há dados ausentes podemos usar também o seguinte comando:
 
+- Código 8
         # Atribuindo os valores ausentes à variável valores_ausentes
         valores_ausentes = df.isnull()
         
         # Exibindo o total de valores_ausentes
         print(valores_ausentes.sum())
 
-        # Código 8
-
 A primeira linha de código atribui os valores ausentes à variavel "valores_ausentes". Já na segunda linha, é pedido para exibir a soma total de valores ausentes por coluna, obtendo o seguinte resultado:
 
-
 - Imagem 4
+
 
 Perceba que há um valor ausente na coluna "Sexo", o que só confirma a conclusão que tiramos da imagem 3. Para tratar esse erro podemos remover a linha que possui o erro, aplicar métodos estatísticos ou consultar o setor da empresa que nos forneceu os dados para que possamos alterá-lo de forma correta.
 Pudemos verifica na imagem 2 que se trata de um valor ausente da informação sobre o sexo de José. Para alterá-la para "Masc" (masculino) podemos acessar a linha e a coluna do valor ausente e modificá-lo individualmente da seguinte forma:
 
+- Código 9
         # Localizando o valor nulo na linha 2 e coluna 2 e atribuindo o valor
         df.iloc[2, 2] = "Masc"
         
         # Exibindo o dataframe
         print(df)
 
-        # Código 9
-
 O retorno no dataset seria o seguinte:
 
-
 - Imagem 5
+
 
 ### d.    Remoção de duplicatas
 
 Na imagem 5 vemos claramente que “Maria” é um valo duplicado. Para realizar a remoção de duplicatas no Python, podemos utilizar o comando:
 
+- Código 10
         # Remove duplicatas e, um dataframe
         df = df.drop_duplicates()
         
         # Exibindo o dataframe
         print(df)
 
-        # Código 10
-
 Essas linhas de código retornam o seguinte dataframe sem duplicatas:
 
-
 - Imagem 6
+
 
 A partir desse momento, o dataset não possui mais 5 valores, conforme imagem 3, e sim 4, pois um valor duplicado foi removido.
 
@@ -302,18 +293,17 @@ Na imagem 3, percebe-se que a coluna de idade, que é de valores inteiros, está
 
 Para transformarmos o tipo de objeto para inteiro, codamos o seguinte: 
 
+- Código 11
         # Transformando string em inteiro
         df["Idade"] = df["Idade"].astype(int)
         
         # Exibindo informações do dataframe
         df.info()
 
-        # Código 11
-
 Assim, podemos obter o resultado:
 
-
 - Imagem 7
+
 
 Nesse momento, podemos confirmar que idade agora é do tipo inteiro. Ainda, vemos o que foi informado no tópico anterior (remoção de duplicatas) que o dataframe só possui 4 valores.
 
@@ -331,15 +321,14 @@ Para tratar esse outlier, iremos considerá-lo como um erro de digitação, pode
 
 Para tal solução, codamos o seguinte:
 
+- Código 12
         # Tratando outliers da linha 3 e coluna 3, de 16.0m para 1.60m
         df.iloc[3, 3] = 1.60
 
-        # Código 12
-
 O nosso dataset agora está correto da seguinte forma:
 
-
 - Imagem 8
+
 
 Nesse momento, nosso dataframe está totalmente livre de erros. Finalizando assim, a etapa de manipulação e limpeza do dataset “dados”.
 
@@ -378,7 +367,6 @@ Em nosso código é possível verificar que acima de cada linha há um caractere
 Por meio desse artigo, pudemos pincelar o assunto no tocante à manipulação e limpeza de dados com Python para ciência de dados, e assim entender o porquê de transformar dados em ouro, pois sua utilização correta permite aos gestores tomares decisões corretas baseadas em dados, ações como essa são conhecidamente como Data Driven.
 
 A arte de manipular e limpar dados com Python em ciência de dados é para todos que estejam dispostos a aprender cada dia mais a gerar riqueza com os dados.
-
 
 ##    Referência
 
