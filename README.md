@@ -2,6 +2,14 @@
 
 ## Turning Data to Gold: The Art of Manipulating and Cleaning Data with Python in Data Science
 
+
+
+## License and author
+
+
+
+## Message to the reader
+
 Hello world!
 
 This article was created with the purpose of explaining, in a simple way, the manipulation and cleaning of data using the Python language in Data Science, so that the reader can improve his understanding of this subject.
@@ -392,8 +400,6 @@ https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm
 
 https://peps.python.org/pep-0008/
 
-Repositório completo do artigo:
+LinkedIn:
 
-https://github.com/JeffersonLCXaxa/Data_Manipulation_and_Cleaning_with_Python_for_Simple_Algorithm_Data_Science
-
-
+https://www.linkedin.com/in/jefferson-xax%C3%A1-815516b0/
