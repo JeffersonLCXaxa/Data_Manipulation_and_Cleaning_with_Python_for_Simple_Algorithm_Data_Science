@@ -8,24 +8,24 @@ This article was created with the purpose of explaining, in a simple way, the ma
 
 ## Sumário
 
-Introdução
+1.  Introdução
 Contextualização
 Objetivo do artigo
-Entendendo a manipulação e limpeza de dados
+2.  Entendendo a manipulação e limpeza de dados
 Definição
 A importância da manipulação e limpeza para a análise de dados
 O benefício de ter os dados limpos e bem manipulados
-Ferramentas e Bibliotecas para manipulação e limpeza de dados em Python
+3.  Ferramentas e Bibliotecas para manipulação e limpeza de dados em Python
 Visão geral das principais bibliotecas para manipulação de dados
 Demonstração de algumas funcionalidades importantes dessas bibliotecas
-Etapas de manipulação e limpeza de dados com Python
+4.  Etapas de manipulação e limpeza de dados com Python
 Coleta e aquisição de dados
 Análise preliminar dos dados
 Identificação e tratamento de dados ausentes ou faltantes
 Remoção de duplicatas
 Transformação de dados para formatos adequados
 Lidando com outliers e anomalias em dados
-Tratamento de dados sensíveis e privacidade
-Boas práticas de manipulação e limpeza de dados
+5.  Tratamento de dados sensíveis e privacidade
+6.  Boas práticas de manipulação e limpeza de dados
 Considerações finais
 Referencial teórico
