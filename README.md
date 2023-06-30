@@ -82,7 +82,9 @@ Em resumo, ao fazer algum trabalho com dados realizaremos uma manipulação, já
 ### b.    A importância da manipulação e limpeza para a análise de dados
 
 Essa etapa é tão importante que a maioria dos devs que trabalham com dados gastam a maior parte do tempo no seu tratamento.
+
 Caso hipotético: Você é um cientista de dados em uma empresa de pequeno porte, onde sua análise contribui para a tomada de decisão. Em uma dessas análises foi lançado o desafio apresentar ao cliente a melhor opção, em relação ao custo-benefício, para a escolha de um fornecedor. Você está apressado e pula a etapa de manipulação e limpeza dos dados. No momento de sua apresentação, verifica que os gráficos apresentaram erros como “NULL”, “None” ou valores discrepantes (outliers) e que mesmo assim foi possível extrair insights para aquele cliente. Meses depois, o cliente percebe que seu retorno financeiro está abaixo do que esperava e percebe a má decisão que tomou baseada em uma análise ruim realizada por você.
+
 O caso hipotético acima demonstra uma das consequências que a ausência dessa etapa tão importante pode causar a uma empresa, projeto ou a um cliente. A manipulação e limpeza de dados são suas aliadas na análise de dados e fundamental que represente a realidade de forma significativa e consistente. Evitando, dessa forma, prejuízos e garantindo feedback que seu cliente deseja ter, afinal, é o que se espera ao contratar seu serviço.
 
 ### c.    O benefício de ter os dados limpos e bem manipulados
