@@ -365,4 +365,35 @@ Em nosso código é possível verificar que acima de cada linha há um caractere
 
 ##    Considerações finais
 
+Por meio desse artigo, pudemos pincelar o assunto no tocante à manipulação e limpeza de dados com Python para ciência de dados, e assim entender o porquê de transformar dados em ouro, pois sua utilização correta permite aos gestores tomares decisões corretas baseadas em dados, ações como essa são conhecidamente como Data Driven.
+
+A arte de manipular e limpar dados com Python em ciência de dados é para todos que estejam dispostos a aprender cada dia mais a gerar riqueza com os dados.
+
+
 ##    Referência
+
+https://ilumeo.com.br/todos-posts/2021/08/17/um-pouco-da-historia-da-ciencia-de-dados
+
+https://pandas.pydata.org/docs/
+
+https://www.jstatsoft.org/article/view/v059i10
+
+https://www.hashtagtreinamentos.com/bibliotecas-mais-importantes-do-python?gad=1&gclid=Cj0KCQjw1_SkBhDwARIsANbGpFsV7-5lsgmt1jv6W5nxmUZ6AcCiWg1h4mp9grEqZq5-MqWVt80o06AaAgifEALw_wcB
+
+https://pandas.pydata.org/docs/user_guide/indexing.html
+
+https://numpy.org/doc/1.25/user/index.html
+
+https://www.aquare.la/o-que-sao-outliers-e-como-trata-los-em-uma-analise-de-dados/
+
+https://g1.globo.com/mundo/noticia/2023/01/04/o-homem-que-nao-para-de-crescer-e-sonha-em-se-tornar-o-mais-alto-do-mundo.ghtml
+
+https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709compilado.htm
+
+https://peps.python.org/pep-0008/
+
+Repositório completo do artigo:
+
+https://github.com/JeffersonLCXaxa/Data_Manipulation_and_Cleaning_with_Python_for_Simple_Algorithm_Data_Science
+
+
