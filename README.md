@@ -94,6 +94,64 @@ Relacionado à manipulação e limpeza de dados, as bibliotecas mais conhecidas 
 
 Podemos importar a biblioteca Pandas por meio do comando “pip install pandas” dentro da IDE utilizada pelo usuário (seja o Visual Studio Code, Jupyter Notebook, PyCharm etc.) e atribuindo, ao final, seu apelido “pd”, ficando então da seguinte forma:
 
+        # Importando o Pandas
+        import pandas as pd
+
+        # Código 1
+
+Com o Pandas importado podemos carregar um dataframe e atribuí-lo à variável “df” (abreviação de dataframe). É possível ler diversos formatos de dataframes, dentre alguns podemos exemplificar:
+
+        # Exemplo 1
+        df = pd.read_excel,(“Caminho do dataframe + nome + o formato do arquivo”)
+        
+        # Exemplo 2
+        df = pd.read_csv,(“Caminho do dataframe + nome + o formato do arquivo”)
+        
+        # Exemplo 3
+        df = pd.read_json,(“Caminho do dataframe + nome + o formato do arquivo”)
+        
+        # Exemplo 4
+        df = pd.read_html,(“Caminho do dataframe + nome + o formato do arquivo”)
+        
+        # Exemplo 5
+        df = pd.read_xml,(“Caminho do dataframe + nome + o formato do arquivo”)
+        
+        # Exemplo 6
+        df = pd.read_sql,(“Caminho do dataframe + nome + o formato do arquivo”)
+
+        # Código 2
+
+Utilizando um dicionário, por exemplo, podemos criar um dataframe com o seguinte comando:
+
+        # Transformando um dicionário em um dataframe
+        df = pd. DataFrame(‘Caminho do dataframe + o formato do arquivo’)
+
+        # Código 3
+
+Para exibir seu dataframe na tela podemos utilizar o comando a seguir:
+
+        # Exibindo o dataframe
+        print(df)
+
+        # Código 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
