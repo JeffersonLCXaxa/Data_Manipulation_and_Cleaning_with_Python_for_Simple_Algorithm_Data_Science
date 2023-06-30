@@ -135,33 +135,234 @@ Para exibir seu dataframe na tela podemos utilizar o comando a seguir:
 
         # Código 4
 
+Podemos ainda, importar a biblioteca NumPy por meio do comando “pip install numpy” dentro da IDE utilizada pelo usuário e adicionar, ao final, o seu apelido “np”, ficando então da seguinte forma:
+
+        # Importando a biblioteca NumPy
+        pip install numpy as np
+
+        # Código 5
+
+Com o NumPy podemos trabalhar com arrays e datatypes, entre outros, por exemplo, dentro de um dataframe. Contudo, neste artigo, daremos foco à biblioteca Pandas.
+Passado por esta etapa, seria realizado uma exploração dos dados para conhecer o dataframe que seria manipulados os dados.
+
+## 4.    Etapas de Manipulação e Limpeza de Dados com Python
+
+Com base no que já foi explicitado e considerando que o Pandas e o NumPy já tenham sido importados, vamos trabalhar com um dicionário chamado “Dados”, que é uma base de cadastro de clientes fictícios, para melhor desenvolver o entendimento.
+
+### a.    Coleta e aquisição de dados
+
+Para a aquisição de um dataframe foi importado a biblioteca Pandas. Em seguida criamos um dicionario para ser chamado pela função pd.DataFrame() do Pandas (além de chamar o dicionário, o converte de "chave" : "valor" para um dataframe de linhas e colunas, atribui "dados" a variável df e exibe o dataframe ao final com a função print():
+
+        # Importando o Pandas
+        import pandas as pd
+
+        # Estruturando o dicionário
+        dados = {
+            "Nome": [
+                "João",
+                "Maria",
+                "José",
+                "Ana",
+                "Maria"
+            ],
+        
+            "Idade": [
+                '25',
+                21,
+                30,
+                27,
+                21
+            ],
+        
+            "Sexo": [
+                "Masc",
+                "Fem",
+                None,
+                "Fem",
+                "Fem"
+            ],
+            
+            "Altura": [
+                1.75,
+                1.90,
+                1.80,
+                16.0,
+                1.90
+            ],
+            
+            "Peso": [
+                75,
+                67,
+                90,
+                60,
+                67
+            ]
+        }
+        
+        # Atribuindo o dataframe do dicionário para a variável df
+        df = pd.DataFrame(dados)
+        
+        print(df)
+
+        # Código 6
+
+O dicionário seria exibido da seguinte forma:
 
 
+- Imagem 1
+
+Contudo, transformamos o dicionário em um dataframe, e o resultado do código é o seguinte:
 
 
+- Imagem 2
+
+Este é um pequeno exemplo de manipulação de dados com a biblioteca Pandas do Python.
+
+### b.    Análise preliminar dos dados
+
+Vamos verificar as colunas que esse dataset possui e o tipo de dado que cada uma possui por meio da função info():
+
+        # Exibindo informações do dataframe
+        df.info()
+
+        # Código 7
+
+Essa função apresenta o seguinte retorno:
 
 
+- Imagem 3
+
+É possível verificar que o dataframe possui 5 colunas (Nome, Idade, Sexo, Altura e Peso), e que respectivamente os tipos de dados são object, object, object, float64 e Int64 (onde object são dados de string, float64 são dados com números decimais e int64 são número inteiros). Ainda, podemos verificar que cada uma das colunas possui 5 valores, exceto a de “Sexo”, o que quer dizer que há valores ausentes nessa coluna, pois possui apenas 4 valores não nulos.
+
+### c.    Identificação e tratamento de dados ausentes ou faltantes
+
+Para verificar se há dados ausentes podemos usar também o seguinte comando:
+
+        # Atribuindo os valores ausentes à variável valores_ausentes
+        valores_ausentes = df.isnull()
+        
+        # Exibindo o total de valores_ausentes
+        print(valores_ausentes.sum())
+
+        # Código 8
+
+A primeira linha de código atribui os valores ausentes à variavel "valores_ausentes". Já na segunda linha, é pedido para exibir a soma total de valores ausentes por coluna, obtendo o seguinte resultado:
 
 
+- Imagem 4
+
+Perceba que há um valor ausente na coluna "Sexo", o que só confirma a conclusão que tiramos da imagem 3. Para tratar esse erro podemos remover a linha que possui o erro, aplicar métodos estatísticos ou consultar o setor da empresa que nos forneceu os dados para que possamos alterá-lo de forma correta.
+Pudemos verifica na imagem 2 que se trata de um valor ausente da informação sobre o sexo de José. Para alterá-la para "Masc" (masculino) podemos acessar a linha e a coluna do valor ausente e modificá-lo individualmente da seguinte forma:
+
+        # Localizando o valor nulo na linha 2 e coluna 2 e atribuindo o valor
+        df.iloc[2, 2] = "Masc"
+        
+        # Exibindo o dataframe
+        print(df)
+
+        # Código 9
+
+O retorno no dataset seria o seguinte:
 
 
+- Imagem 5
+
+### d.    Remoção de duplicatas
+
+Na imagem 5 vemos claramente que “Maria” é um valo duplicado. Para realizar a remoção de duplicatas no Python, podemos utilizar o comando:
+
+        # Remove duplicatas e, um dataframe
+        df = df.drop_duplicates()
+        
+        # Exibindo o dataframe
+        print(df)
+
+        # Código 10
+
+Essas linhas de código retornam o seguinte dataframe sem duplicatas:
 
 
+- Imagem 6
+
+A partir desse momento, o dataset não possui mais 5 valores, conforme imagem 3, e sim 4, pois um valor duplicado foi removido.
+
+### e.    Transformação de dados para formatos adequados
+
+Na imagem 3, percebe-se que a coluna de idade, que é de valores inteiros, está como object (ou sejam string). Isso acontece porque no código 6 a idade de João está entre aspas, o que torna o objeto em string. Portanto, deveria ter o formato int32 ou int64.
+
+Para transformarmos o tipo de objeto para inteiro, codamos o seguinte: 
+
+        # Transformando string em inteiro
+        df["Idade"] = df["Idade"].astype(int)
+        
+        # Exibindo informações do dataframe
+        df.info()
+
+        # Código 11
+
+Assim, podemos obter o resultado:
 
 
+- Imagem 7
+
+Nesse momento, podemos confirmar que idade agora é do tipo inteiro. Ainda, vemos o que foi informado no tópico anterior (remoção de duplicatas) que o dataframe só possui 4 valores.
+
+### f.    Lidando com outliers e anomalias em dados
+
+Outlier é qualquer coisa que fuja da normalidade, em outras palavras, é o que é drasticamente diferenciado.
+
+Ao analisar dados, muitos podem ser os fatores que criaram um outlier, por exemplo: Erro de digitação, a o dado pode ter sido colhido com erro, pode ter havido má fé de quem forneceu os dados, pode também ocorrer que seja lago verídico e mesmo assim não deixa de ser algo fora da curva.
+
+Para tratar outliers primeiro precisamos identificá-los, com isso, dependendo do caso concreto, podemos tratá-lo removendo-o da base de dados, transformação os dados, tratando os outliers como uma categoria separada ou até mesmo utilizar métodos robustos como estatística. “Cada caso é um caso”.
+
+Em nosso dataframe possuímos um outlier. Se você prestar atenção na coluna de altura da imagem 6, perceberá que a medida está em metros, e que Ana possui 16 metros, o que é impossível, pois a pessoa mais alta do mundo possui 2,5 metros de altura (G1, 2023).
+
+Para tratar esse outlier, iremos considerá-lo como um erro de digitação, poderíamos utilizar também metodos estatísticos, como a média das idades, logaritmos ou função quadrática.
+
+Para tal solução, codamos o seguinte:
+
+        # Tratando outliers da linha 3 e coluna 3, de 16.0m para 1.60m
+        df.iloc[3, 3] = 1.60
+
+        # Código 12
+
+O nosso dataset agora está correto da seguinte forma:
 
 
+- Imagem 8
 
+Nesse momento, nosso dataframe está totalmente livre de erros. Finalizando assim, a etapa de manipulação e limpeza do dataset “dados”.
 
+Como a nossa base de dados é pequena, percebemos facilmente alguns erros ao printar o dataframe e conseguir visualizá-lo por completo. Contudo, em uma base maior, como o Big Data, não seria tão fácil identificar os erros, necessitando então de uma análise exploratória de dados mais aprofundada, o que demandaria tempo e conhecimento.
 
+## 5.    Tratamento de dados sensíveis e privacidade
 
+Quando se trata de dados sensíveis, a primeira coisa que vem à mente é a segurança da informação. Pois bem, para tratar brevemente deste assunto, citaremos a LGPD – Lei Geral de Proteção de Dados Pessoais (lei 13.709 / 2018).
 
+A LGPD é uma lei que dispõe sobre o tratamento de dados pessoais, incluindo-se nesse rol os dados do meio digital, dados públicos ou privados, de pessoa física ou jurídica.
 
+O profissional de dados deve ser uma pessoa responsável para ter acesso e poder manipular e limpar tais dados. Podendo vir a ser responsabilizado penal e civilmente por atos ilícitos cometidos diante dos dados de outrem.
 
+Caso queira se aprofundar no assunto, no referencial teórico possui o link direto para a página da LGPD no site do Planalto.
 
+## 6.    Boas práticas de manipulação e limpeza de dados
 
+Tratando-se de Python, a PEP 8 convenciona as boas práticas do uso dessa linguagem de programação. Contudo, não trata da manipulação e limpeza de dados. Porém, há do que se falar quando se trata de tal assunto.
 
+Vamos abordar dois assuntos relacionado à manipulação e limpeza de dados e suas boas práticas brevemente.
 
-Considerações finais
+-    Documentação:
 
-Referência
+A documentação de uma biblioteca em Python, seja o Pandas, p NumPy etc., é passagem obrigatória para todos analista, cientista e engenheiro de dados que precise aprender, relembrar ou tirar dúvidas sobre como utilizar um pacote. Essa atitude te fará ganhar tempo no desenvolvimento de sua solução de negócio e até mesmo deixá-lo mais apto para tratamentos mais profundos nos dados.
+
+-    Registro de transformações aplicadas aos dados:
+
+O registro nada mais é do que comentar o que está sendo alterado ou transformado em uma base de dados, aplicação ou algoritmo.
+
+Em nosso código é possível verificar que acima de cada linha há um caractere “#” que determina que tudo o que vier após ele, na mesma linha, será apenas um comentário. Além da hashtag, podemos comentar também  por meio de aspas simples (‘ ’), aspas duplas (“ ”) e aspas triplas (‘’’ ‘’’). Neste último caso, o utilizamos para comentar um bloco ou conjunto de linhas que estiver dentro de seu corpo.
+
+É uma boa prática realizar comentários, pois nem sempre será apenas quem os criou a utilizá-los, permitindo assim que outras pessoas que tenham acesso a ele, possam saber o que cada linha faz sem precisar perder tempo tentando entendê-la.
+
+##    Considerações finais
+
+##    Referência
